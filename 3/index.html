@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>MediFlow - Premium Medication Management</title>
+    <meta name="description"
+        content="MediFlow is a high-end, professional-grade smart pill box application with a sleek interface for seamless medication management.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Tajawal:wght@300;400;500;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <div class="logo-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                    </svg>
+                </div>
+                <h1>MediFlow</h1>
+            </div>
+            <p class="motto-text" data-i18n="mottoText">Small steps today, healthier tomorrow.</p>
+            <ul class="nav-links">
+                <li id="nav-dashboard" class="active">
+                    <a href="#">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                        </svg>
+                        <span data-i18n="navDashboard">Dashboard</span>
+                    </a>
+                </li>
+                <li id="nav-pillbox">
+                    <a href="#">
+                        <div class="nav-icon">💊</div>
+                        <span data-i18n="navPillbox">Smart Pill Box</span>
+                    </a>
+                </li>
+                <li id="nav-ai">
+                    <a href="#">
+                        <div class="nav-icon">🤖</div>
+                        <span data-i18n="navAI">Medical Assistant</span>
+                    </a>
+                </li>
+                <li id="nav-schedule">
+                    <a href="#">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                        </svg>
+                        <span data-i18n="navSchedule">Schedule</span>
+                    </a>
+                </li>
+                <li id="nav-settings">
+                    <a href="#">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path
+                                d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                            </path>
+                        </svg>
+                        <span data-i18n="navSettings">Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header">
+                <img src="green_pills.png" alt="Medicine Pills" class="hero-pill-img">
+                <div class="header-text">
+                    <h2 id="page-title"><span data-i18n="welcome">Welcome back</span>, <span id="patient-name-display"
+                            style="cursor: pointer; text-decoration: underline; text-decoration-color: transparent; transition: all 0.2s;"
+                            title="Edit Profile">Alex</span>.</h2>
+                    <p class="date" id="current-date">Today is ...</p>
+                </div>
+                <div class="user-profile">
+                    <button class="btn-primary" id="btn-add-med">
+                        <span>+</span> <span data-i18n="addMedication">Add Medication</span>
+                    </button>
+                    <div class="avatar" id="btn-edit-profile" title="Edit Profile"
+                        style="cursor: pointer; background-image: url('avatar.png'); background-size: cover; background-position: center;">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content" id="dashboard-view">
+                <div class="stats-row">
+                    <div class="stat-card">
+                        <h3 data-i18n="adherenceRate">Adherence Rate</h3>
+                        <div class="progress-ring">
+                            <span class="value">92%</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <h3 data-i18n="upcomingDose">Upcoming Dose</h3>
+                        <p class="highlight">Vitamin D3</p>
+                        <p class="time">In 45 minutes</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 data-i18n="pillBoxStatus">Pill Box Status</h3>
+                        <p class="highlight">All full</p>
+                        <p class="time">Next refill in 6 days</p>
+                    </div>
+                </div>
+
+                <div class="schedule-section" style="margin-top: 1.5rem; margin-bottom: 2rem;">
+                    <div class="section-header" style="margin-bottom: 1rem;">
+                        <h3 data-i18n="achievementsTitle">My Awards</h3>
+                    </div>
+                    <div id="awards-container" style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <!-- Awards populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Health Tip Card -->
+                <div class="stat-card tip-card"
+                    style="position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(59, 130, 246, 0.1)); border: 1px solid var(--glass-border); margin-top: 1.5rem;">
+                    <div style="display: flex; align-items: flex-start; gap: 1rem;">
+                        <div style="font-size: 2.5rem;">💡</div>
+                        <div>
+                            <h4 style="font-size: 0.95rem; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-primary); margin-bottom: 0.5rem;"
+                                data-i18n="dailyTipTitle">Daily Health Tip</h4>
+                            <p id="daily-tip-text" style="font-size: 1.15rem; line-height: 1.5; font-weight: 500;">
+                                Drinking water helps your body absorb medication better.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Today's Schedule -->
+                <div class="schedule-section" style="margin-top: 2rem;">
+                    <div class="section-header">
+                        <h3 data-i18n="todaySchedule">Today's Schedule</h3>
+                    </div>
+                    <div class="schedule-timeline" id="schedule-list">
+                        <!-- Populated by JS -->
+                    </div>
+                    <button id="btn-view-all" class="btn-secondary"
+                        style="display: none; margin-top: 1.5rem; width: 100%;" data-i18n="viewAllMeds">View All
+                        Medications</button>
+                </div>
+            </div>
+
+            <!-- Medical Assistant AI View -->
+            <div class="ai-content" id="ai-view" style="display: none;">
+                <div class="schedule-section" style="margin-top: 0;">
+                    <div class="section-header">
+                        <h3 data-i18n="navAI">Medical Assistant</h3>
+                    </div>
+
+                    <div class="stat-card"
+                        style="background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(168, 85, 247, 0.1)); border: 1px solid var(--accent-primary); padding: 2rem; text-align: center; margin-bottom: 1.5rem;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">✨</div>
+                        <h4 style="margin-bottom: 0.5rem;" data-i18n="aiWelcome">MediFlow AI Assistant</h4>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem;" data-i18n="aiDesc">Ask me anything
+                            about medications, side effects, or organization tips.</p>
+                    </div>
+
+                    <!-- Chat Interface -->
+                    <div class="terminal-container" style="height: 450px; display: flex; flex-direction: column;">
+                        <div id="ai-chat-logs"
+                            style="flex-grow: 1; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 1rem;">
+                            <!-- AI Messages -->
+                            <div
+                                style="background: var(--bg-surface-elevated); padding: 0.8rem 1.2rem; border-radius: 12px 12px 12px 0; align-self: flex-start; max-width: 80%; border: 1px solid var(--glass-border);">
+                                <p style="font-size: 0.95rem;" data-i18n="aiInitialMsg">Hello! I am your Medical
+                                    Assistant. How can I help you manage your medications today?</p>
+                            </div>
+                        </div>
+                        <div class="terminal-input-group"
+                            style="border-top: 1px solid var(--border-color); padding: 1rem;">
+                            <input type="text" id="ai-input" placeholder="Ask about a medication (e.g., Panadol)..."
+                                autocomplete="off">
+                            <button class="btn-primary" id="ai-send" style="background: var(--accent-primary);">
+                                <span data-i18n="sendBtn">Send</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full Schedule Content -->
+            <div class="schedule-content" id="schedule-view" style="display: none;">
+                <div class="schedule-section" style="margin-top: 0;">
+                    <div class="section-header"
+                        style="display: flex; justify-content: space-between; align-items: center;">
+                        <h3 data-i18n="fullSchedule">Full Schedule</h3>
+                        <span id="total-meds-badge"
+                            style="background: var(--glass-bg); padding: 0.25rem 0.75rem; border-radius: 8px; font-size: 0.9rem; font-weight: 600; color: var(--text-secondary); border: 1px solid var(--border-color);"></span>
+                    </div>
+
+                    <!-- Weekly Progress Card -->
+                    <div class="stat-card"
+                        style="background: var(--bg-surface); border: 1px solid var(--glass-border); margin-top: 1rem; margin-bottom: 2rem;">
+                        <h4 style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); margin-bottom: 1rem;"
+                            data-i18n="weeklyGoalTitle">Weekly Progress</h4>
+                        <div id="weekly-dots"
+                            style="display: flex; justify-content: space-between; align-items: center; gap: 8px;">
+                            <!-- Dots will be generated by JS -->
+                        </div>
+                    </div>
+                    <div class="schedule-timeline" id="full-schedule-list">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Smart Pill Box View (Terminal) -->
+            <div class="pillbox-content" id="pillbox-view" style="display: none;">
+                <div class="schedule-section" style="margin-top: 0;">
+                    <div class="section-header">
+                        <h3 data-i18n="terminalTitle">Bluetooth Terminal</h3>
+                    </div>
+
+                    <div class="terminal-container" id="main-terminal-container">
+                        <div id="terminal-logs">
+                            <div class="terminal-line info">Welcome to MediFlow Bluetooth Terminal.</div>
+                        </div>
+                        <div class="terminal-input-group">
+                            <input type="text" id="terminal-input" placeholder="Enter command..." autocomplete="off"
+                                data-i18n="terminalPlaceholder">
+                            <button class="btn-primary" id="terminal-send">
+                                <span data-i18n="sendBtn">Send</span>
+                            </button>
+                        </div>
+
+                        <div
+                            style="margin-top: 1.5rem; display: flex; justify-content: center; border-top: 1px solid var(--border-color); padding-top: 1.5rem;">
+                            <button class="btn-lang flex-center btn-bluetooth-sync" id="btn-bluetooth-terminal"
+                                title="Connect Smart Box"
+                                style="color:var(--accent-primary); border-color:var(--accent-primary); gap: 8px; padding: 0.75rem 1.5rem; width: 100%;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6.5 6.5 17.5 17.5 12 23 12 1 17.5 6.5 6.5 17.5"></polyline>
+                                </svg>
+                                <span data-i18n="connectBox">Connect Box</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Content -->
+            <div class="settings-content" id="settings-view" style="display: none;">
+                <div class="schedule-section" style="margin-top: 0;">
+                    <div class="section-header">
+                        <h3 data-i18n="navSettings">Settings</h3>
+                    </div>
+
+                    <div class="settings-list">
+                        <!-- Connect Box Option -->
+                        <div class="setting-item"
+                            style="display: flex; justify-content: space-between; align-items: center; padding: 1.25rem; background: var(--bg-surface); border-radius: 16px; border: 1px solid var(--glass-border); margin-bottom: 1rem;">
+                            <div>
+                                <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.25rem;"
+                                    data-i18n="boxConnectionStatus">Smart Box Connection</h4>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem;"
+                                    data-i18n="boxConnectionDesc">
+                                    Connect via Bluetooth to sync medications</p>
+                            </div>
+                            <button class="btn-lang flex-center btn-bluetooth-sync" id="btn-bluetooth"
+                                title="Connect Smart Box"
+                                style="color:var(--accent-primary); border-color:var(--accent-primary); gap: 6px;">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="6.5 6.5 17.5 17.5 12 23 12 1 17.5 6.5 6.5 17.5"></polyline>
+                                </svg>
+                                <span data-i18n="connectBox">Connect Box</span>
+                            </button>
+                        </div>
+
+                        <!-- Theme Toggle Option -->
+                        <div class="setting-item"
+                            style="display: flex; justify-content: space-between; align-items: center; padding: 1.25rem; background: var(--bg-surface); border-radius: 16px; border: 1px solid var(--glass-border); margin-bottom: 1rem;">
+                            <div>
+                                <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.25rem;"
+                                    data-i18n="appearanceTitle">Appearance</h4>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem;" data-i18n="appearanceDesc">
+                                    Toggle between Light and Dark mode</p>
+                            </div>
+                            <button class="btn-lang flex-center" id="btn-theme" title="Toggle Theme"
+                                style="padding: 0.5rem; width: 44px; height: 44px;">
+                            </button>
+                        </div>
+
+                        <!-- Language Option -->
+                        <div class="setting-item"
+                            style="display: flex; justify-content: space-between; align-items: center; padding: 1.25rem; background: var(--bg-surface); border-radius: 16px; border: 1px solid var(--glass-border);">
+                            <div>
+                                <h4 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 0.25rem;"
+                                    data-i18n="languageTitle">Language</h4>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem;" data-i18n="languageDesc">
+                                    Change the application's language</p>
+                            </div>
+                            <button class="btn-lang" id="btn-lang" title="Switch Language"
+                                style="min-width: 100px;">عربي</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div> <!-- Close app-container -->
+
+    <!-- Modals (Moved outside main-content and app-container to fix blur) -->
+    <!-- Modal for Adding Medication -->
+    <div class="modal-overlay" id="add-med-modal">
+        <div class="modal house-card">
+            <div class="modal-header">
+                <h3 data-i18n="addModalTitle">Add New Medication</h3>
+                <button class="close-btn" id="close-modal">&times;</button>
+            </div>
+            <form id="add-med-form">
+                <div class="form-group">
+                    <label for="med-name" data-i18n="medNameLabel">Medication Name</label>
+                    <input type="text" id="med-name" required placeholder="e.g., Lisinopril">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="med-dosage" data-i18n="dosageLabel">Dosage</label>
+                        <input type="text" id="med-dosage" required placeholder="e.g., 10mg">
+                    </div>
+                    <div class="form-group">
+                        <label for="med-time" data-i18n="timeLabel">Time</label>
+                        <input type="time" id="med-time" required value="08:00">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="med-freq" data-i18n="freqLabel">Frequency</label>
+                        <select id="med-freq">
+                            <option value="daily" data-i18n="freqDaily">Daily</option>
+                            <option value="days" data-i18n="freqDays">Specific Days</option>
+                            <option value="once" data-i18n="freqOnce">Just for today</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="med-days-group" style="display: none; grid-column: span 2;">
+                        <label data-i18n="selectDaysLabel">Select Days</label>
+                        <div class="days-selector">
+                            <label class="day-check"><input type="checkbox" value="Saturday"> <span
+                                    data-i18n="daySat">Sat</span></label>
+                            <label class="day-check"><input type="checkbox" value="Sunday"> <span
+                                    data-i18n="daySun">Sun</span></label>
+                            <label class="day-check"><input type="checkbox" value="Monday"> <span
+                                    data-i18n="dayMon">Mon</span></label>
+                            <label class="day-check"><input type="checkbox" value="Tuesday"> <span
+                                    data-i18n="dayTue">Tue</span></label>
+                            <label class="day-check"><input type="checkbox" value="Wednesday"> <span
+                                    data-i18n="dayWed">Wed</span></label>
+                            <label class="day-check"><input type="checkbox" value="Thursday"> <span
+                                    data-i18n="dayThu">Thu</span></label>
+                            <label class="day-check"><input type="checkbox" value="Friday"> <span
+                                    data-i18n="dayFri">Fri</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="med-meal" data-i18n="mealLabel">Meal Timing</label>
+                    <select id="med-meal">
+                        <option value="none" data-i18n="mealNone">No specific meal</option>
+                        <option value="beforeBreakfast" data-i18n="mealBeforeBreakfast">Before Breakfast
+                        </option>
+                        <option value="afterBreakfast" data-i18n="mealAfterBreakfast">After Breakfast</option>
+                        <option value="beforeLunch" data-i18n="mealBeforeLunch">Before Lunch</option>
+                        <option value="afterLunch" data-i18n="mealAfterLunch">After Lunch</option>
+                        <option value="beforeDinner" data-i18n="mealBeforeDinner">Before Dinner</option>
+                        <option value="afterDinner" data-i18n="mealAfterDinner">After Dinner</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary full-width" data-i18n="saveMed">Save
+                    Medication</button>
+            </form>
+        </div>
+    </div>
+    <!-- Modal for Editing Profile -->
+    <div class="modal-overlay" id="edit-profile-modal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 data-i18n="editProfileTitle">Edit Profile</h3>
+                <button class="close-btn" id="close-profile-modal">&times;</button>
+            </div>
+            <form id="edit-profile-form">
+                <div class="form-group" style="text-align: center;">
+                    <label data-i18n="profilePictureLabel">Profile Picture</label>
+                    <div class="avatar" id="profile-picture-preview"
+                        style="width: 80px; height: 80px; margin: 0 auto 1rem; background-image: url('avatar.png'); background-size: cover; background-position: center; font-size: 2rem;">
+                    </div>
+                    <input type="file" id="profile-picture-input" accept="image/*" style="display: none;">
+                    <button type="button" class="btn-secondary" id="btn-upload-pic"
+                        style="margin: 0 auto; padding: 0.5rem 1rem; font-size: 0.85rem;"
+                        data-i18n="uploadPictureBtn">Upload Picture</button>
+                </div>
+                <div class="form-group">
+                    <label for="patient-name-input" data-i18n="patientNameLabel">Patient Name</label>
+                    <input type="text" id="patient-name-input" required placeholder="e.g., Alex">
+                </div>
+                <div class="form-group">
+                    <label for="patient-gender" data-i18n="genderLabel">Gender</label>
+                    <select id="patient-gender">
+                        <option value="male" data-i18n="genderMale">Male</option>
+                        <option value="female" data-i18n="genderFemale">Female</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary full-width" data-i18n="saveProfileBtn">Save
+                    Profile</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Onboarding Modal (For First Time Users) -->
+    <div class="modal-overlay" id="onboarding-modal">
+        <div class="modal boarding-card">
+            <div class="modal-header" style="text-align: center; display: block;">
+                <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem;">Welcome to MediFlow</h2>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">Let's personalize your health journey
+                </p>
+            </div>
+            <form id="onboarding-form" style="margin-top: 2rem;">
+                <div class="form-group">
+                    <label for="onboard-name">What's your name?</label>
+                    <input type="text" id="onboard-name" required placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="onboard-gender">Select your Gender</label>
+                    <select id="onboard-gender"
+                        style="padding: 1rem; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 12px; color: white; width: 100%; appearance: none; cursor: pointer;">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary full-width"
+                    style="margin-top: 1rem; padding: 1rem; border-radius: 16px;">Get Started</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
